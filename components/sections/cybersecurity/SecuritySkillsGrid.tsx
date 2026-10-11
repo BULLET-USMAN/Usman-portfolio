@@ -26,9 +26,10 @@ export function SecuritySkillsGrid() {
         return {
           title: node.label,
           description: node.description,
-          icon: <Icon className="h-4 w-4 text-accent" />,
+          icon: <Icon key={node.id} className="h-4 w-4 text-accent" />,
           badge: (
             <span
+              key={node.id}
               className={
                 node.status === 'skill'
                   ? 'rounded-full border border-accent-line px-2 py-0.5 font-mono text-[10px] uppercase tracking-wide text-accent'

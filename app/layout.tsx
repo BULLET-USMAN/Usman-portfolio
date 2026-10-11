@@ -68,8 +68,8 @@ const personSchema = {
 
 export default function RootLayout({ children }: LayoutProps<'/'>) {
   return (
-    <html lang="en" className="h-full">
-      <body className="flex min-h-full flex-col overflow-x-hidden bg-bg font-body text-text-primary antialiased">
+    <html lang="en" suppressHydrationWarning className="h-full">
+      <body suppressHydrationWarning className="flex min-h-full flex-col overflow-x-hidden bg-bg font-body text-text-primary antialiased">
         <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
         <MotionConfig reducedMotion="user">
           <ScrollProgress />

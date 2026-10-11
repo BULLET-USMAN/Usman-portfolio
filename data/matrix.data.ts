@@ -55,7 +55,7 @@ export const matrixStats: Stat[] = [
   { label: 'Role', value: 'Founder', description: 'Matrix Esports' },
   { label: 'Focus Areas', value: '6', countTo: 6, description: 'See below' },
   { label: 'Reach', value: '100K+', countTo: 100, description: 'Across social & community' },
-  { label: 'Tournaments Hosted', value: '—', isPlaceholder: true },
+  { label: 'Tournaments Hosted', value: '25+' },
 ]
 
 /**
@@ -67,13 +67,17 @@ export const matrixStats: Stat[] = [
 export const matrixEvents: MatrixEvent[] = [
   { name: 'Gamers Clash' },
   { name: 'Goal//ZERO' },
+  { name: 'Nexus Esports League' },
 ]
 
 /**
  * Sponsors / partners. Stays empty until real, confirmed partners
  * exist — see SponsorsPanel.tsx for how the empty state renders.
  */
-export const matrixSponsors: MatrixSponsor[] = []
+export const matrixSponsors: MatrixSponsor[] = [
+  { name: 'The Marauders', href: 'https://www.instagram.com/themarauders.tmrd/' },
+  { name: 'Stack360' },
+]
 
 /**
  * Matrix Esports' own social presence, separate from the personal
@@ -86,8 +90,8 @@ export const matrixSocials: SocialLink[] = [
     href: 'https://www.instagram.com/matrixesports.pk/',
     icon: 'instagram',
   },
-  { label: 'Twitter / X', href: 'https://x.com/', icon: 'twitter', isPlaceholder: true },
-  { label: 'Discord', href: 'https://discord.com/', icon: 'discord', isPlaceholder: true },
+  { label: 'Twitter / X', href: 'https://x.com/Matrixesportspk', icon: 'twitter' },
+  { label: 'Discord', href: 'https://discord.gg/Swc6pEkW6q', icon: 'discord' },
 ]
 
 export const matrixCta = {
