@@ -1,7 +1,7 @@
 'use client'
 
-import { useId, useState, type FormEvent } from 'react'
-import { Loader2, CheckCircle2, AlertCircle } from 'lucide-react'
+import { useId, useState, useRef, useEffect, type FormEvent } from 'react'
+import { Loader2, CheckCircle2, AlertCircle, ChevronDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { submitContactForm, type ContactFormPayload } from '@/lib/contact-form'
 import { siteConfig } from '@/data/site.config'
@@ -133,19 +133,14 @@ export function ContactForm() {
         <label htmlFor={purposeId} className="text-xs uppercase tracking-[0.15em] text-text-muted">
           What&apos;s this about? <span className="normal-case text-text-muted">(optional)</span>
         </label>
-        <select
+      <CustomSelect
           id={purposeId}
           value={values.purpose}
-          onChange={(e) => updateField('purpose', e.target.value)}
-          className={cn('mt-2', inputClass, 'appearance-none')}
-        >
-          <option value="">Select a reason</option>
-          {siteConfig.contact.purposes.map((purpose) => (
-            <option key={purpose} value={purpose}>
-              {purpose}
-            </option>
-          ))}
-        </select>
+          onChange={(val) => updateField('purpose', val)}
+          placeholder="Select a reason"
+          options={siteConfig.contact.purposes}
+          className="mt-2"
+        />
       </div>
 
       <div>
@@ -229,5 +224,90 @@ function FieldError({ id, children }: { id: string; children: string }) {
       <AlertCircle className="h-3 w-3 shrink-0 text-text-muted" aria-hidden="true" />
       {children}
     </p>
+  )
+}
+
+/** Fully styled dropdown that replaces the native <select>. */
+function CustomSelect({
+  id,
+  value,
+  onChange,
+  placeholder,
+  options,
+  className,
+}: {
+  id: string
+  value: string
+  onChange: (val: string) => void
+  placeholder: string
+  options: string[]
+  className?: string
+}) {
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  // Close on outside click
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [])
+
+  // Close on Escape
+  useEffect(() => {
+    function handleKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    if (open) document.addEventListener('keydown', handleKey)
+    return () => document.removeEventListener('keydown', handleKey)
+  }, [open])
+
+  return (
+    <div ref={ref} className={cn('relative', className)}>
+      <button
+        id={id}
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        className="flex w-full items-center justify-between rounded-[var(--radius-sm)] border border-border bg-surface-glass px-4 py-2.5 text-sm transition-colors duration-200 focus:border-accent-line focus:outline-none"
+      >
+        <span className={value ? 'text-text-primary' : 'text-text-muted'}>
+          {value || placeholder}
+        </span>
+        <ChevronDown className={cn('h-4 w-4 text-text-muted transition-transform duration-200', open && 'rotate-180')} />
+      </button>
+
+      {open && (
+        <ul className="absolute z-50 mt-1 w-full overflow-hidden rounded-[var(--radius-sm)] border border-border bg-[#0d0d0d] shadow-xl">
+          <li>
+            <button
+              type="button"
+              onClick={() => { onChange(''); setOpen(false) }}
+              className={cn(
+                'w-full px-4 py-2.5 text-left text-sm transition-colors hover:bg-white/10',
+                !value ? 'text-accent' : 'text-text-muted'
+              )}
+            >
+              {placeholder}
+            </button>
+          </li>
+          {options.map((opt) => (
+            <li key={opt}>
+              <button
+                type="button"
+                onClick={() => { onChange(opt); setOpen(false) }}
+                className={cn(
+                  'w-full px-4 py-2.5 text-left text-sm transition-colors hover:bg-white/10',
+                  value === opt ? 'text-accent' : 'text-text-primary'
+                )}
+              >
+                {opt}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   )
 }
