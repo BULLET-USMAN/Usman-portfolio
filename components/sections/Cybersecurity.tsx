@@ -19,7 +19,7 @@ export function Cybersecurity() {
       />
 
       <div className="mt-10">
-        <GlassCard className="mx-auto max-w-xl p-4 sm:p-6 md:p-8">
+        <GlassCard className="mx-auto max-w-2xl p-4 sm:p-6 md:p-8">
           <NetworkTopology />
         </GlassCard>
       </div>

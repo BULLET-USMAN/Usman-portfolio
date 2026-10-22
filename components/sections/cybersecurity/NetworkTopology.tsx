@@ -4,9 +4,11 @@ import { useId, useState } from 'react'
 import { THREE_COLORS } from '@/lib/three-theme'
 import { securityNodes, securityConnections } from '@/data/cybersecurity.data'
 
-const CENTER = 300
-const HUB_RADIUS = 220
-const SVG_SIZE = 600
+const SVG_WIDTH = 760
+const SVG_HEIGHT = 620
+const CENTER_X = SVG_WIDTH / 2
+const CENTER_Y = SVG_HEIGHT / 2
+const HUB_RADIUS = 175
 
 // Spatial order around the circle — two clusters (networking skills,
 // then security-concept learning areas) so related nodes land next to
@@ -29,14 +31,14 @@ const positions = new Map<string, { x: number; y: number }>()
 LAYOUT_ORDER.forEach((id, i) => {
   const angle = (-90 + i * (360 / LAYOUT_ORDER.length)) * (Math.PI / 180)
   positions.set(id, {
-    x: CENTER + HUB_RADIUS * Math.cos(angle),
-    y: CENTER + HUB_RADIUS * Math.sin(angle),
+    x: CENTER_X + HUB_RADIUS * Math.cos(angle),
+    y: CENTER_Y + HUB_RADIUS * Math.sin(angle),
   })
 })
 
 function labelAnchor(x: number): 'start' | 'middle' | 'end' {
-  if (x < CENTER - 12) return 'end'
-  if (x > CENTER + 12) return 'start'
+  if (x < CENTER_X - 20) return 'end'
+  if (x > CENTER_X + 20) return 'start'
   return 'middle'
 }
 
@@ -63,10 +65,10 @@ export function NetworkTopology() {
 
   return (
     <div>
-      <div className="aspect-square w-full">
+      <div className="aspect-[760/620] w-full">
         <svg
-          viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`}
-          className="h-full w-full"
+          viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
+          className="h-full w-full overflow-visible"
           role="img"
           aria-labelledby={titleId}
         >
@@ -75,10 +77,10 @@ export function NetworkTopology() {
         </title>
 
         {/* Hub */}
-        <circle cx={CENTER} cy={CENTER} r={32} fill={THREE_COLORS.accent} opacity={0.06} />
+        <circle cx={CENTER_X} cy={CENTER_Y} r={32} fill={THREE_COLORS.accent} opacity={0.06} />
         <circle
-          cx={CENTER}
-          cy={CENTER}
+          cx={CENTER_X}
+          cy={CENTER_Y}
           r={7}
           fill="none"
           stroke={THREE_COLORS.accent}
@@ -94,8 +96,8 @@ export function NetworkTopology() {
           return (
             <line
               key={`spoke-${id}`}
-              x1={CENTER}
-              y1={CENTER}
+              x1={CENTER_X}
+              y1={CENTER_Y}
               x2={pos.x}
               y2={pos.y}
               stroke={highlighted ? THREE_COLORS.accent : THREE_COLORS.line}
@@ -135,7 +137,12 @@ export function NetworkTopology() {
           const active = activeId === node.id
           const anchor = labelAnchor(pos.x)
           const labelOffset = anchor === 'end' ? -14 : anchor === 'start' ? 14 : 0
-          const labelY = pos.y < CENTER - 12 ? pos.y - 12 : pos.y > CENTER + 12 ? pos.y + 22 : pos.y + 4
+          const labelY =
+            pos.y < CENTER_Y - 60
+              ? pos.y - 14
+              : pos.y > CENTER_Y + 60
+                ? pos.y + 24
+                : pos.y + 4
 
           return (
             <g
@@ -180,7 +187,8 @@ export function NetworkTopology() {
                 x={pos.x + labelOffset}
                 y={labelY}
                 textAnchor={anchor}
-                className="pointer-events-none select-none font-mono text-[20px] uppercase tracking-wide sm:text-[11px]"
+                fontSize="11"
+                className="pointer-events-none select-none font-mono uppercase tracking-wide"
                 fill={active ? THREE_COLORS.accent : 'var(--color-text-muted)'}
               >
                 {node.label}
