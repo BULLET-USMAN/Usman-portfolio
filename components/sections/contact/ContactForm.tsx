@@ -70,19 +70,15 @@ export function ContactForm() {
       const result = await submitContactForm(values)
       if (result.success) {
         setStatus('success')
-        setStatusMessage(
-          result.demo
-            ? "This is a demo form for now, so nothing was actually sent — no backend is connected yet. Please reach out directly using the contact info above."
-            : "Thanks — your message has been sent."
-        )
+        setStatusMessage("Thanks — your message has been sent to usmanjunaid809@gmail.com! I'll get back to you soon.")
         setValues(EMPTY_VALUES)
       } else {
         setStatus('error')
-        setStatusMessage(result.error ?? 'Something went wrong. Please try again or reach out directly.')
+        setStatusMessage(result.error ?? 'Something went wrong. Please reach out directly to usmanjunaid809@gmail.com.')
       }
     } catch {
       setStatus('error')
-      setStatusMessage('Something went wrong. Please try again or reach out directly.')
+      setStatusMessage('Something went wrong. Please reach out directly to usmanjunaid809@gmail.com.')
     }
   }
 
@@ -213,6 +209,18 @@ export function ContactForm() {
             </span>
           )}
         </div>
+      </div>
+
+      <div className="border-t border-border/50 pt-4 text-center sm:text-left">
+        <p className="text-xs text-text-muted">
+          Prefer your email client?{' '}
+          <a
+            href="mailto:usmanjunaid809@gmail.com"
+            className="text-text-primary underline decoration-accent underline-offset-4 transition-colors hover:text-accent"
+          >
+            usmanjunaid809@gmail.com
+          </a>
+        </p>
       </div>
     </form>
   )
