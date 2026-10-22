@@ -9,7 +9,7 @@ import type { Stat } from '@/types/content'
 
 interface StatsGridProps {
   stats: Stat[]
-  columns?: 2 | 3
+  columns?: 2 | 3 | 4
 }
 
 /**
@@ -82,7 +82,8 @@ export function StatsGrid({ stats, columns = 3 }: StatsGridProps) {
       ref={containerRef}
       className={cn(
         'grid grid-cols-1 gap-4 sm:grid-cols-2',
-        columns === 3 && 'lg:grid-cols-3'
+        columns === 3 && 'lg:grid-cols-3',
+        columns === 4 && 'lg:grid-cols-4'
       )}
     >
       {stats.map((stat) =>

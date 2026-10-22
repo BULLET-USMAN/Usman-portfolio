@@ -16,7 +16,7 @@ export function About() {
       />
 
       <div className="mt-12">
-        <StatsGrid stats={stats} />
+        <StatsGrid stats={stats} columns={4} />
       </div>
 
       <div className="mt-16">

@@ -93,14 +93,4 @@ export const stats: Stat[] = [
     value: 'Ongoing',
     description: 'Continuous, hands-on',
   },
-  {
-    label: 'Esports Events Organized',
-    value: '—',
-    isPlaceholder: true,
-  },
-  {
-    label: 'Social Reach',
-    value: '—',
-    isPlaceholder: true,
-  },
 ]
