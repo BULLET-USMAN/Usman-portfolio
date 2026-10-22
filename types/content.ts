@@ -128,6 +128,8 @@ export interface MatrixEvent {
 export interface MatrixSponsor {
   name: string
   href?: string
+  /** Path to sponsor logo image under /public (e.g. '/sponsors/logo.png'). */
+  logo?: string
 }
 
 /** One skill/learning-area node in the cybersecurity network diagram. */
