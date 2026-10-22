@@ -24,22 +24,6 @@ export const JOURNEY_CATEGORY_LABELS: Record<JourneyStage['category'], string> =
  */
 export const journeyStages: JourneyStage[] = [
   {
-    id: 'matriculation',
-    period: '2019 \u2013 2021',
-    title: 'Matriculation',
-    description: 'Completed secondary schooling (Matriculation).',
-    category: 'education',
-    skills: [],
-  },
-  {
-    id: 'intermediate',
-    period: '2021 \u2013 2023',
-    title: 'Intermediate',
-    description: 'Completed intermediate studies, ahead of university.',
-    category: 'education',
-    skills: [],
-  },
-  {
     id: 'bscs',
     period: '2023 \u2013 2027',
     title: 'BSCS \u2014 Computer Science',
