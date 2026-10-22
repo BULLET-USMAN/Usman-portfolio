@@ -44,15 +44,6 @@ export const journeyStages: JourneyStage[] = [
     relatedHref: '#ecommerce',
   },
   {
-    id: 'esports',
-    period: 'Alongside BSCS',
-    title: 'Esports',
-    description:
-      'Getting involved in competitive gaming and community building, as a personal project ahead of formalizing it into an organization.',
-    category: 'personal-project',
-    skills: ['Community building', 'Event coordination'],
-  },
-  {
     id: 'matrix-esports',
     period: 'Alongside BSCS',
     title: 'Matrix Esports',
@@ -71,14 +62,5 @@ export const journeyStages: JourneyStage[] = [
     category: 'learning',
     skills: ['Networking', 'Linux', 'Security fundamentals'],
     relatedHref: '#cybersecurity',
-  },
-  {
-    id: 'future-career',
-    period: "What's Next",
-    title: 'Future Career',
-    description:
-      'Continued growth across technology, cybersecurity, and entrepreneurship \u2014 this page will keep evolving alongside it.',
-    category: 'future',
-    skills: [],
   },
 ]
