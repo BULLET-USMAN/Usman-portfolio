@@ -72,13 +72,11 @@ export function Navbar() {
                   item.href === '/'
                     ? pathname === '/'
                     : pathname === item.href || pathname.startsWith(item.href + '/')
-                const linkHref =
-                  item.href === '/contact' && pathname === '/' ? '#contact' : item.href
 
                 return (
                   <Link
                     key={item.href}
-                    href={linkHref}
+                    href={item.href}
                     aria-current={isActive ? 'page' : undefined}
                     className={cn(
                       'relative rounded-[var(--radius-sm)] px-3 py-2 text-sm transition-colors duration-200',

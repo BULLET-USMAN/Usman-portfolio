@@ -70,7 +70,7 @@ export const siteConfig: SiteConfig = {
 
   heroCtas: {
     primary: { label: 'Explore My Work', href: '/projects' },
-    secondary: { label: 'Contact Me', href: '#contact' },
+    secondary: { label: 'Contact Me', href: '/contact' },
   },
 
   finalCta: {
