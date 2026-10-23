@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { About } from '@/components/sections/About'
 import { Journey } from '@/components/sections/Journey'
 import { Achievements } from '@/components/sections/Achievements'
+import { PageNavigation } from '@/components/navigation/PageNavigation'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -14,6 +15,10 @@ export default function AboutPage() {
       <About />
       <Journey />
       <Achievements />
+      <PageNavigation
+        prev={{ label: 'Home', href: '/' }}
+        next={{ label: 'Matrix Esports', href: '/matrix' }}
+      />
     </div>
   )
 }
