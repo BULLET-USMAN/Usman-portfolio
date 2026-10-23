@@ -44,14 +44,14 @@ export const siteConfig: SiteConfig = {
   },
 
   nav: [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Matrix', href: '#matrix' },
-    { label: 'Cybersecurity', href: '#cybersecurity' },
-    { label: 'E-Commerce', href: '#ecommerce' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+    { label: 'Matrix', href: '/matrix' },
+    { label: 'Cybersecurity', href: '/cybersecurity' },
+    { label: 'E-Commerce', href: '/ecommerce' },
+    { label: 'Projects', href: '/projects' },
+    { label: 'Skills', href: '/skills' },
+    { label: 'Contact', href: '/contact' },
   ],
 
   socials: [
@@ -69,7 +69,7 @@ export const siteConfig: SiteConfig = {
   contactEmail: 'usmanjunaid809@gmail.com',
 
   heroCtas: {
-    primary: { label: 'Explore My Work', href: '#projects' },
+    primary: { label: 'Explore My Work', href: '/projects' },
     secondary: { label: 'Contact Me', href: '#contact' },
   },
 

@@ -1,20 +1,19 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Menu } from 'lucide-react'
 import { siteConfig } from '@/data/site.config'
-import { useActiveSection } from '@/lib/use-active-section'
 import { Badge } from '@/components/ui/Badge'
 import { MobileMenu } from '@/components/navigation/MobileMenu'
 import { cn } from '@/lib/utils'
 
-const SECTION_IDS = siteConfig.nav.map((item) => item.href.replace('#', ''))
-
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
-  const activeSection = useActiveSection(SECTION_IDS)
+  const pathname = usePathname()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16)
@@ -55,7 +54,7 @@ export function Navbar() {
                 : 'border-transparent bg-transparent'
             )}
           >
-            <a href="#home" className="flex items-center gap-2.5">
+            <Link href="/" className="flex items-center gap-2.5">
               <span
                 aria-hidden="true"
                 className="relative flex h-7 w-7 items-center justify-center rounded-full border border-accent-line"
@@ -65,16 +64,22 @@ export function Navbar() {
               <span className="font-display text-sm font-medium tracking-tight text-text-primary">
                 {siteConfig.name}
               </span>
-            </a>
+            </Link>
 
             <div className="hidden items-center gap-1 xl:flex">
               {siteConfig.nav.map((item) => {
-                const isActive = activeSection === item.href.replace('#', '')
+                const isActive =
+                  item.href === '/'
+                    ? pathname === '/'
+                    : pathname === item.href || pathname.startsWith(item.href + '/')
+                const linkHref =
+                  item.href === '/contact' && pathname === '/' ? '#contact' : item.href
+
                 return (
-                  <a
+                  <Link
                     key={item.href}
-                    href={item.href}
-                    aria-current={isActive ? 'true' : undefined}
+                    href={linkHref}
+                    aria-current={isActive ? 'page' : undefined}
                     className={cn(
                       'relative rounded-[var(--radius-sm)] px-3 py-2 text-sm transition-colors duration-200',
                       isActive ? 'text-text-primary' : 'text-text-secondary hover:text-text-primary'
@@ -87,7 +92,7 @@ export function Navbar() {
                         aria-hidden="true"
                       />
                     )}
-                  </a>
+                  </Link>
                 )
               })}
             </div>

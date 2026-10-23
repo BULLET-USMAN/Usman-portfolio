@@ -31,7 +31,7 @@ export const journeyStages: JourneyStage[] = [
       'Pursuing a BSCS at the University of Faisalabad \u2014 now in the 7th semester, having built multiple projects along the way and currently working on a final year project.',
     category: 'education',
     skills: ['Programming fundamentals', 'Problem solving', 'Systems thinking'],
-    relatedHref: '#about',
+    relatedHref: '/about',
   },
   {
     id: 'amazon-ecommerce',
@@ -41,7 +41,7 @@ export const journeyStages: JourneyStage[] = [
       'Independent, freelance work as an Amazon virtual assistant \u2014 product research, market analysis, and hands-on use of research tools.',
     category: 'freelance',
     skills: ['Product research', 'Market research', 'Excel', 'Helium 10'],
-    relatedHref: '#ecommerce',
+    relatedHref: '/ecommerce',
   },
   {
     id: 'matrix-esports',
@@ -51,7 +51,7 @@ export const journeyStages: JourneyStage[] = [
       'Founded and built an esports organization from the ground up \u2014 tournaments, community, and sponsorship outreach.',
     category: 'venture',
     skills: ['Leadership', 'Sponsorship outreach', 'Tournament organization'],
-    relatedHref: '#matrix',
+    relatedHref: '/matrix',
   },
   {
     id: 'cybersecurity',
@@ -61,6 +61,6 @@ export const journeyStages: JourneyStage[] = [
       'Continuously developing practical skills in networking, Linux, and security fundamentals through hands-on, self-directed learning.',
     category: 'learning',
     skills: ['Networking', 'Linux', 'Security fundamentals'],
-    relatedHref: '#cybersecurity',
+    relatedHref: '/cybersecurity',
   },
 ]
