@@ -18,6 +18,17 @@ export const PROJECT_CATEGORIES: Record<Project['category'], string> = {
  */
 export const projects: Project[] = [
   {
+    id: 'sentineldlp',
+    title: 'SentinelDLP',
+    category: 'cybersecurity',
+    description:
+      'An enterprise-grade, AI-powered Data Loss Prevention (DLP) and exfiltration detection platform. Monitors endpoint activity, classifies sensitive data, computes explainable 0–100 threat risk scores, and orchestrates investigations with a local AI SOC Analyst.',
+    role: 'Creator & Developer',
+    technologies: ['Python', 'FastAPI', 'React', 'TypeScript', 'Docker', 'Ollama / LLMs', 'Tailwind CSS'],
+    outcome: '171 automated tests passing, zero-leakage privacy redaction, and local AI-assisted SOC threat investigation.',
+    githubUrl: 'https://github.com/BULLET-USMAN/SentinelDLP',
+  },
+  {
     id: 'cinelist',
     title: 'CineList',
     category: 'web-development',

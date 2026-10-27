@@ -144,4 +144,11 @@ export const toolsExposure: SecondarySkill[] = [
  * real one — see ProjectsPanel.tsx for the empty-state handling. Never
  * populate with example entries.
  */
-export const securityProjects: SecurityProject[] = []
+export const securityProjects: SecurityProject[] = [
+  {
+    name: 'SentinelDLP',
+    description:
+      'AI-powered defensive cybersecurity platform for enterprise Data Loss Prevention & Exfiltration Detection. Features streaming SHA-256 chunking, Shannon entropy secret detection, PCI-DSS Luhn validation, 0–100 deterministic risk scoring, and a privacy-preserving local AI SOC Analyst.',
+    href: 'https://github.com/BULLET-USMAN/SentinelDLP',
+  },
+]
