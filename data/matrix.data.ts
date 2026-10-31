@@ -80,11 +80,11 @@ export const matrixSponsors: MatrixSponsor[] = [
 ]
 
 /**
- * Matrix Esports' own social presence, separate from the personal
- * socials in site.config.ts. Instagram is real; Twitter/X and Discord
- * remain placeholders until real links are shared.
+ * Matrix Esports' own social presence and web platform, separate from the personal
+ * socials in site.config.ts.
  */
 export const matrixSocials: SocialLink[] = [
+  { label: 'Website (matrixesports.org)', href: 'https://matrixesports.org', icon: 'globe' },
   {
     label: 'Instagram',
     href: 'https://www.instagram.com/matrixesports.pk/',
@@ -95,7 +95,7 @@ export const matrixSocials: SocialLink[] = [
 ]
 
 export const matrixCta = {
-  label: 'Explore Matrix Esports',
-  href: matrixSocials[0]?.href ?? '#',
+  label: 'Visit matrixesports.org',
+  href: 'https://matrixesports.org',
   isPlaceholder: false,
 }

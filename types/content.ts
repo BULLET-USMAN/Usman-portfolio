@@ -20,7 +20,7 @@ export interface SocialLink extends Placeholder {
   label: string
   href: string
   /** lucide-react icon name, resolved in the Navbar/Footer/Contact components */
-  icon: 'github' | 'linkedin' | 'mail' | 'discord' | 'external-link' | 'instagram' | 'twitter'
+  icon: 'github' | 'linkedin' | 'mail' | 'discord' | 'external-link' | 'instagram' | 'twitter' | 'globe'
   /** True when `href` is a plain identifier (e.g. a Discord username) rather than a navigable URL — renders as copy-to-clipboard instead of a link. */
   isHandle?: boolean
 }

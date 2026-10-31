@@ -18,6 +18,17 @@ export const PROJECT_CATEGORIES: Record<Project['category'], string> = {
  */
 export const projects: Project[] = [
   {
+    id: 'matrix-esports',
+    title: 'Matrix Esports Platform',
+    category: 'matrix-esports',
+    description:
+      'Official web platform and competitive gaming hub for Matrix Esports — fielding competitive rosters across Valorant, PUBG, FIFA, and Tekken, while organizing premier tournaments and community leagues.',
+    role: 'Founder & Director',
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Community Ops'],
+    outcome: 'Live esports platform, 25+ tournaments hosted, and 100K+ reach across social media & gaming communities.',
+    externalUrl: 'https://matrixesports.org',
+  },
+  {
     id: 'sentineldlp',
     title: 'SentinelDLP',
     category: 'cybersecurity',

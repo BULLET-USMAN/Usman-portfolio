@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Terminal, Briefcase, Mail, ExternalLink, Check } from 'lucide-react'
+import { Terminal, Briefcase, Mail, ExternalLink, Check, Globe } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { SocialLink } from '@/types/content'
 
@@ -40,6 +40,7 @@ const ICONS: Record<SocialLink['icon'], React.ComponentType<{ className?: string
   'external-link': ExternalLink,
   instagram: InstagramIcon,
   twitter: XTwitterIcon,
+  globe: Globe,
 }
 
 interface SocialLinksRowProps {

@@ -29,8 +29,16 @@ export function MatrixEsports() {
             Matrix Esports is where entrepreneurship meets competitive gaming — an organization
             built around tournaments, community, content, and partnerships. Matrix hosts and
             organizes events across titles including Valorant, Tekken 8, and FIFA, and runs its
-            community through Discord and social media, while working toward a full professional
-            esports brand — its own website, leagues, staff team, sponsors, and partnerships.
+            community through Discord, social media, and its official platform at{' '}
+            <a
+              href="https://matrixesports.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent underline underline-offset-4 transition-colors hover:text-accent-hover"
+            >
+              matrixesports.org
+            </a>
+            .
           </p>
 
           <div className="mt-5 flex flex-wrap gap-2">
