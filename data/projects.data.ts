@@ -37,6 +37,6 @@ export const projects: Project[] = [
     role: 'Full-Stack Developer',
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'Supabase', 'PostgreSQL', 'TMDB API', 'Vercel'],
     outcome: 'Live web app with real-time watchlist tracking, user authentication, and TMDB API integration.',
-    externalUrl: 'https://cinelist-kappa.vercel.app/',
+    externalUrl: 'https://cinelist-watch.vercel.app/',
   },
 ]
