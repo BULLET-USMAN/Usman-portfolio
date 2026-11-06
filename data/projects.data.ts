@@ -18,6 +18,17 @@ export const PROJECT_CATEGORIES: Record<Project['category'], string> = {
  */
 export const projects: Project[] = [
   {
+    id: 'aegissiem',
+    title: 'AegisSIEM',
+    category: 'cybersecurity',
+    description:
+      'An enterprise-grade, modular, web-based Security Information and Event Management (SIEM) platform for modern SOCs. Ingests Windows & Linux telemetry, applies declarative Sigma detection rules mapped to MITRE ATT&CK, correlates multi-stage attacks, and provides explainable 0–100 risk scoring with analyst incident workflows.',
+    role: 'Creator & Developer',
+    technologies: ['Python', 'FastAPI', 'React', 'TypeScript', 'PostgreSQL', 'Docker', 'Sigma Rules'],
+    outcome: 'Centralized telemetry ingestion, MITRE ATT&CK detection mapping, multi-stage event correlation, and full SOC incident investigation workflows.',
+    githubUrl: 'https://github.com/BULLET-USMAN/AegisSIEM',
+  },
+  {
     id: 'sentineldlp',
     title: 'SentinelDLP',
     category: 'cybersecurity',

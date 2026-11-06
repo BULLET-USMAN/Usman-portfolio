@@ -146,6 +146,12 @@ export const toolsExposure: SecondarySkill[] = [
  */
 export const securityProjects: SecurityProject[] = [
   {
+    name: 'AegisSIEM',
+    description:
+      'Enterprise-grade Security Information and Event Management (SIEM) platform. Ingests Windows & Linux security telemetry, performs schema normalization and credential scrubbing, executes declarative Sigma detection rules mapped to MITRE ATT&CK, correlates multi-stage attacks, and provides explainable 0–100 risk scoring with incident response workflows.',
+    href: 'https://github.com/BULLET-USMAN/AegisSIEM',
+  },
+  {
     name: 'SentinelDLP',
     description:
       'AI-powered defensive cybersecurity platform for enterprise Data Loss Prevention & Exfiltration Detection. Features streaming SHA-256 chunking, Shannon entropy secret detection, PCI-DSS Luhn validation, 0–100 deterministic risk scoring, and a privacy-preserving local AI SOC Analyst.',
