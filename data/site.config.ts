@@ -11,11 +11,11 @@ import type { SiteConfig } from '@/types/content'
 export const siteConfig: SiteConfig = {
   name: 'Usman Junaid',
   legalName: 'Muhammad Usman Junaid',
-  roles: ['Esports Entrepreneur', 'Cybersecurity Enthusiast', 'E-Commerce Professional'],
-  tagline: 'Esports Entrepreneur • Cybersecurity Enthusiast • E-Commerce Professional',
-  footerTagline: 'Esports • Cybersecurity • E-Commerce',
+  roles: ['Esports Entrepreneur', 'Cybersecurity Enthusiast', 'Software Developer'],
+  tagline: 'Esports Entrepreneur • Cybersecurity Enthusiast • Software Developer',
+  footerTagline: 'Esports • Cybersecurity • Software Development',
   description:
-    'A Computer Science student at the University of Faisalabad, I build communities, businesses and technology-driven experiences at the intersection of esports, cybersecurity and digital commerce.',
+    'A Computer Science student at the University of Faisalabad, I build communities, businesses and technology-driven experiences at the intersection of esports, cybersecurity and software engineering.',
 
   availability: {
     isAvailable: true,
@@ -23,9 +23,9 @@ export const siteConfig: SiteConfig = {
   },
 
   seo: {
-    title: 'Usman Junaid — Esports • Cybersecurity • E-Commerce',
+    title: 'Usman Junaid — Esports • Cybersecurity • Software Development',
     description:
-      'Portfolio of Usman Junaid — Computer Science student at the University of Faisalabad, Founder of Matrix Esports, cybersecurity learner, and Amazon / e-commerce professional building at the intersection of technology and entrepreneurship.',
+      'Portfolio of Usman Junaid — Computer Science student at the University of Faisalabad, Founder of Matrix Esports, cybersecurity enthusiast, and software developer building at the intersection of technology and entrepreneurship.',
     keywords: [
       'Usman Junaid',
       'Muhammad Usman Junaid',
@@ -33,9 +33,9 @@ export const siteConfig: SiteConfig = {
       'Matrix Esports',
       'Esports Organization',
       'Cybersecurity',
-      'Amazon Virtual Assistant',
-      'E-commerce',
-      'Product Research',
+      'Software Development',
+      'Full Stack Developer',
+      'Web Development',
     ],
     // Configurable via NEXT_PUBLIC_SITE_URL at deploy time — falls back
     // to a clearly-placeholder domain since the real one isn't known yet.
@@ -48,7 +48,6 @@ export const siteConfig: SiteConfig = {
     { label: 'About', href: '/about' },
     { label: 'Matrix', href: '/matrix' },
     { label: 'Cybersecurity', href: '/cybersecurity' },
-    { label: 'E-Commerce', href: '/ecommerce' },
     { label: 'Projects', href: '/projects' },
     { label: 'Skills', href: '/skills' },
     { label: 'Contact', href: '/contact' },

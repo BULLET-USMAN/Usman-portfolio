@@ -8,7 +8,7 @@ export function Skills() {
       <SectionHeading
         mark
         eyebrow="Skills"
-        title="Technology, cybersecurity, esports, and e-commerce"
+        title="Technology, cybersecurity, and esports"
         description="Grouped by domain rather than ranked by number — there's no meaningful percentage to put on a skill like this, so these are shown as what they are: things worked with, not scored."
       />
 

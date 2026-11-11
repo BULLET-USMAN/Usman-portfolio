@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Code2, Shield, Gamepad2, ShoppingCart } from 'lucide-react'
+import { Code2, Shield, Gamepad2 } from 'lucide-react'
 import { useStaggerReveal } from '@/lib/use-stagger-reveal'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { skillCategories } from '@/data/skills.data'
@@ -11,7 +11,6 @@ const ICONS: Record<SkillCategory['icon'], React.ComponentType<{ className?: str
   code: Code2,
   shield: Shield,
   gamepad: Gamepad2,
-  'shopping-cart': ShoppingCart,
 }
 
 export function SkillClusters() {

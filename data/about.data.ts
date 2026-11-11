@@ -32,9 +32,9 @@ export const focusAreas: FocusArea[] = [
     description: 'Hands-on learning across networking, Linux, and security fundamentals.',
   },
   {
-    icon: 'shopping-cart',
-    title: 'E-Commerce',
-    description: 'Amazon virtual assistance, product research, and market analysis.',
+    icon: 'code',
+    title: 'Software Development',
+    description: 'Full-stack engineering, web applications, and security-focused software.',
   },
   {
     icon: 'users',
@@ -86,7 +86,7 @@ export const stats: Stat[] = [
     label: 'Active Domains',
     value: '3',
     countTo: 3,
-    description: 'Esports · Cybersecurity · E-Commerce',
+    description: 'Esports · Cybersecurity · Software Development',
   },
   {
     label: 'Learning',

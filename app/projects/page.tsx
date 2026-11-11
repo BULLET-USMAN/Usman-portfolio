@@ -12,7 +12,7 @@ export default function ProjectsPage() {
     <div className="pt-12 sm:pt-16">
       <Projects />
       <PageNavigation
-        prev={{ label: 'E-Commerce', href: '/ecommerce' }}
+        prev={{ label: 'Cybersecurity', href: '/cybersecurity' }}
         next={{ label: 'Skills', href: '/skills' }}
       />
     </div>

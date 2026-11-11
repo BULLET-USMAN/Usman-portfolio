@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Swords, Shield, Code2, Brain, ShoppingCart, ArrowUpRight, Terminal } from 'lucide-react'
+import { Swords, Shield, Code2, Brain, ArrowUpRight, Terminal } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { GlassCard } from '@/components/ui/GlassCard'
 import { Badge } from '@/components/ui/Badge'
@@ -11,7 +11,6 @@ const CATEGORY_ICONS: Record<Project['category'], LucideIcon> = {
   cybersecurity: Shield,
   'web-development': Code2,
   'ai-university': Brain,
-  ecommerce: ShoppingCart,
 }
 
 interface ProjectCardProps {

@@ -13,7 +13,7 @@ export default function CybersecurityPage() {
       <Cybersecurity />
       <PageNavigation
         prev={{ label: 'Matrix Esports', href: '/matrix' }}
-        next={{ label: 'E-Commerce', href: '/ecommerce' }}
+        next={{ label: 'Projects', href: '/projects' }}
       />
     </div>
   )

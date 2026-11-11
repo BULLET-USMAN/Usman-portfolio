@@ -6,10 +6,9 @@ import type { SkillCategory } from '@/types/content'
  * would be exactly the kind of invented statistic this site avoids
  * everywhere else.
  *
- * The cybersecurity and e-commerce lists are kept in sync with the
- * fuller, more specific breakdowns in cybersecurity.data.ts and
- * ecommerce.data.ts (Phases 10C/10D) — this is a condensed summary of
- * the same real information, not a separate claim.
+ * The cybersecurity list is kept in sync with the
+ * fuller, more specific breakdowns in cybersecurity.data.ts —
+ * this is a condensed summary of the same real information, not a separate claim.
  */
 export const skillCategories: SkillCategory[] = [
   {
@@ -43,24 +42,6 @@ export const skillCategories: SkillCategory[] = [
       'Sponsorship Outreach',
       'Event Organization',
       'Discord Management',
-    ],
-  },
-  {
-    id: 'ecommerce',
-    label: 'E-Commerce',
-    icon: 'shopping-cart',
-    skills: [
-      'Amazon VA',
-      'Product Hunting',
-      'Product Research',
-      'Market Research',
-      'Competitor Analysis',
-      'Keyword Research',
-      'Listing Research',
-      'Product Listing',
-      'Excel',
-      'Helium 10',
-      'SellerSprite',
     ],
   },
 ]

@@ -6,7 +6,6 @@ export const PROJECT_CATEGORIES: Record<Project['category'], string> = {
   cybersecurity: 'Cybersecurity',
   'web-development': 'Web Development',
   'ai-university': 'AI / University',
-  ecommerce: 'Amazon / E-Commerce',
 }
 
 /**

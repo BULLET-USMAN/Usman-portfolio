@@ -47,7 +47,7 @@ export interface FocusArea {
     | 'gamepad'
     | 'cpu'
     | 'shield'
-    | 'shopping-cart'
+    | 'code'
     | 'users'
     | 'calendar'
     | 'trending-up'
@@ -94,9 +94,9 @@ export interface SiteConfig {
   }
 }
 
-/** Shared shape for the three pillar domains (esports / cybersecurity / e-commerce). */
+/** Shared shape for the three pillar domains (esports / cybersecurity / software development). */
 export interface Pillar {
-  id: 'esports' | 'cybersecurity' | 'ecommerce'
+  id: 'esports' | 'cybersecurity' | 'technology'
   title: string
   subtitle: string
 }
@@ -167,21 +167,6 @@ export interface SecurityProject {
   href?: string
 }
 
-/** One stage in the e-commerce research pipeline. */
-export interface EcommerceStage {
-  id: string
-  label: string
-  description: string
-  icon: 'search' | 'clipboard' | 'chart' | 'crosshair' | 'hash' | 'list' | 'package-plus'
-}
-
-/** One tool in the e-commerce toolkit grid. */
-export interface EcommerceTool {
-  name: string
-  description: string
-  icon: 'spreadsheet' | 'gauge' | 'radar'
-}
-
 /**
  * A project in the showcase. Stays an empty array until there's a real
  * one to list — same honesty rule as MatrixEvent/SecurityProject. Built
@@ -191,7 +176,7 @@ export interface EcommerceTool {
 export interface Project {
   id: string
   title: string
-  category: 'matrix-esports' | 'cybersecurity' | 'web-development' | 'ai-university' | 'ecommerce'
+  category: 'matrix-esports' | 'cybersecurity' | 'web-development' | 'ai-university'
   description: string
   role: string
   technologies: string[]
@@ -210,9 +195,9 @@ export interface Project {
 
 /** One category of skill tags in the Skills section. */
 export interface SkillCategory {
-  id: 'technology' | 'cybersecurity' | 'esports' | 'ecommerce'
+  id: 'technology' | 'cybersecurity' | 'esports'
   label: string
-  icon: 'code' | 'shield' | 'gamepad' | 'shopping-cart'
+  icon: 'code' | 'shield' | 'gamepad'
   skills: string[]
 }
 

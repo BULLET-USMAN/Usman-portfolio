@@ -53,7 +53,7 @@ function SceneContents({ tier }: { tier: DeviceTier }) {
 
 /**
  * The full hero composition: a central core with three orbiting pillars
- * (esports / cybersecurity / e-commerce, distinguished by shape, not
+ * (esports / cybersecurity / software development, distinguished by shape, not
  * color) and a sparse ambient particle field. No scene lights are used —
  * every material is unlit (`meshBasicMaterial`), which keeps this cheap
  * and sidesteps needing real postprocessing for the "glow" look.

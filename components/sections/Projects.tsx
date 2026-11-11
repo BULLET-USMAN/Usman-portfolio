@@ -9,7 +9,7 @@ export function Projects() {
         mark
         eyebrow="Projects"
         title="A showcase across every discipline"
-        description="Matrix Esports, cybersecurity, web development, AI/university work, and e-commerce — each project shown with role, technologies, and outcome, and nothing here that wasn't actually built."
+        description="Matrix Esports, cybersecurity, web development, and AI/university work — each project shown with role, technologies, and outcome, and nothing here that wasn't actually built."
       />
 
       <div className="mt-12">
