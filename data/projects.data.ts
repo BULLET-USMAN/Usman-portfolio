@@ -21,7 +21,7 @@ export const projects: Project[] = [
     title: 'AegisSIEM',
     category: 'cybersecurity',
     description:
-      'An enterprise-grade, modular, web-based Security Information and Event Management (SIEM) platform for modern SOCs. Ingests Windows & Linux telemetry, applies declarative Sigma detection rules mapped to MITRE ATT&CK, correlates multi-stage attacks, and provides explainable 0–100 risk scoring with analyst incident workflows.',
+      'Modular Security Information and Event Management (SIEM) platform for modern security operations. Ingests Windows and Linux telemetry, applies declarative Sigma detection rules mapped to MITRE ATT&CK, correlates multi-stage attacks, and provides explainable 0–100 risk scoring with analyst incident workflows.',
     role: 'Creator & Developer',
     technologies: ['Python', 'FastAPI', 'React', 'TypeScript', 'PostgreSQL', 'Docker', 'Sigma Rules'],
     outcome: 'Centralized telemetry ingestion, MITRE ATT&CK detection mapping, multi-stage event correlation, and full SOC incident investigation workflows.',
@@ -32,7 +32,7 @@ export const projects: Project[] = [
     title: 'SentinelDLP',
     category: 'cybersecurity',
     description:
-      'An enterprise-grade, AI-powered Data Loss Prevention (DLP) and exfiltration detection platform. Monitors endpoint activity, classifies sensitive data, computes explainable 0–100 threat risk scores, and orchestrates investigations with a local AI SOC Analyst.',
+      'AI-powered Data Loss Prevention (DLP) and exfiltration detection platform. Monitors endpoint activity, classifies sensitive data, computes explainable 0–100 threat risk scores, and orchestrates investigations with a local AI SOC Analyst.',
     role: 'Creator & Developer',
     technologies: ['Python', 'FastAPI', 'React', 'TypeScript', 'Docker', 'Ollama / LLMs', 'Tailwind CSS'],
     outcome: '171 automated tests passing, zero-leakage privacy redaction, and local AI-assisted SOC threat investigation.',

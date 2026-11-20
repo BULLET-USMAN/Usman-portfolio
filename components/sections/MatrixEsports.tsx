@@ -67,10 +67,10 @@ export function MatrixEsports() {
         </GlassCard>
       </div>
 
-      <div className="mt-14 border-l-2 border-accent-line pl-6">
-        <p className="max-w-2xl font-display text-lg leading-relaxed text-text-primary sm:text-xl">
-          {matrixMission}
-        </p>
+      <div className="mt-14 max-w-3xl">
+        <blockquote className="font-display text-xl font-normal leading-relaxed text-text-primary sm:text-2xl text-pretty">
+          “{matrixMission}”
+        </blockquote>
       </div>
 
       <div className="mt-14">

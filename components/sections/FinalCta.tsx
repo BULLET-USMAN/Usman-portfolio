@@ -21,16 +21,13 @@ export function FinalCta() {
       <CtaGlow />
 
       <div ref={containerRef} className="shell relative z-10 mx-auto max-w-2xl text-center">
-        <div data-reveal className="flex items-center justify-center gap-2.5">
+        <div data-reveal className="mb-6 flex items-center justify-center">
           <SectionMark />
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
-            {eyebrow}
-          </span>
         </div>
 
         <h2
           data-reveal
-          className="mt-5 font-display text-4xl font-medium uppercase leading-[1.05] tracking-tight text-text-primary sm:text-5xl md:text-6xl"
+          className="font-display text-4xl font-medium uppercase leading-[1.05] tracking-tight text-text-primary sm:text-5xl md:text-6xl text-balance"
         >
           {headline}
         </h2>
