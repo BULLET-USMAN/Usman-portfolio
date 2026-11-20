@@ -4,7 +4,7 @@ import { Timeline } from '@/components/sections/journey/Timeline'
 
 export function Journey() {
   return (
-    <SectionShell id="journey">
+    <SectionShell id="journey" elevated>
       <SectionHeading
         mark
         eyebrow="Journey"

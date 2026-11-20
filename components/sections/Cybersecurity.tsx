@@ -10,7 +10,7 @@ import { operatingSystems, programmingSkills, toolsExposure } from '@/data/cyber
 
 export function Cybersecurity() {
   return (
-    <SectionShell id="cybersecurity">
+    <SectionShell id="cybersecurity" elevated>
       <SectionHeading
         mark
         eyebrow="Cybersecurity"

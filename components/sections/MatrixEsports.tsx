@@ -14,7 +14,7 @@ import { matrixStats, matrixSocials, matrixCta, matrixMission, matrixGames } fro
 
 export function MatrixEsports() {
   return (
-    <SectionShell id="matrix" elevated>
+    <SectionShell id="matrix">
       <SectionHeading
         mark
         eyebrow="Matrix Esports"
