@@ -62,7 +62,7 @@ export const siteConfig: SiteConfig = {
     },
     { label: 'Discord', href: 'usman_1.34', icon: 'discord', isHandle: true },
     { label: 'Instagram', href: 'https://www.instagram.com/ttyl__usman/', icon: 'instagram' },
-    { label: 'GitHub', href: 'https://github.com/', icon: 'github', isPlaceholder: true },
+    { label: 'GitHub', href: 'https://github.com/BULLET-USMAN', icon: 'github', isPlaceholder: false },
   ],
 
   contactEmail: 'usmanjunaid809@gmail.com',

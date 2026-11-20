@@ -235,7 +235,7 @@ function FieldError({ id, children }: { id: string; children: string }) {
   )
 }
 
-/** Fully styled dropdown that replaces the native <select>. */
+/** Fully styled dropdown that replaces the native <select> with full keyboard & ARIA support. */
 function CustomSelect({
   id,
   value,
@@ -252,68 +252,136 @@ function CustomSelect({
   className?: string
 }) {
   const [open, setOpen] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
+  const [highlightedIndex, setHighlightedIndex] = useState<number>(-1)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const triggerRef = useRef<HTMLButtonElement>(null)
+  const listboxRef = useRef<HTMLUListElement>(null)
+
+  const allOptions = ['', ...options]
 
   // Close on outside click
   useEffect(() => {
     function handleClick(e: MouseEvent) {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setOpen(false)
+        setHighlightedIndex(-1)
+      }
     }
     document.addEventListener('mousedown', handleClick)
     return () => document.removeEventListener('mousedown', handleClick)
   }, [])
 
-  // Close on Escape
-  useEffect(() => {
-    function handleKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') setOpen(false)
+  // Manage keyboard navigation
+  function handleKeyDown(e: React.KeyboardEvent) {
+    if (!open) {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault()
+        setOpen(true)
+        const currIdx = allOptions.indexOf(value)
+        setHighlightedIndex(currIdx >= 0 ? currIdx : 0)
+      }
+      return
     }
-    if (open) document.addEventListener('keydown', handleKey)
-    return () => document.removeEventListener('keydown', handleKey)
-  }, [open])
+
+    if (e.key === 'Escape') {
+      e.preventDefault()
+      setOpen(false)
+      setHighlightedIndex(-1)
+      triggerRef.current?.focus()
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      setHighlightedIndex((prev) => (prev + 1) % allOptions.length)
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault()
+      setHighlightedIndex((prev) => (prev - 1 + allOptions.length) % allOptions.length)
+    } else if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      if (highlightedIndex >= 0 && highlightedIndex < allOptions.length) {
+        onChange(allOptions[highlightedIndex])
+        setOpen(false)
+        setHighlightedIndex(-1)
+        triggerRef.current?.focus()
+      }
+    } else if (e.key === 'Tab') {
+      setOpen(false)
+      setHighlightedIndex(-1)
+    }
+  }
+
+  // Scroll highlighted item into view
+  useEffect(() => {
+    if (open && highlightedIndex >= 0 && listboxRef.current) {
+      const items = listboxRef.current.querySelectorAll<HTMLLIElement>('[role="option"]')
+      items[highlightedIndex]?.scrollIntoView({ block: 'nearest' })
+    }
+  }, [open, highlightedIndex])
 
   return (
-    <div ref={ref} className={cn('relative', className)}>
+    <div ref={containerRef} className={cn('relative', className)} onKeyDown={handleKeyDown}>
       <button
+        ref={triggerRef}
         id={id}
         type="button"
-        onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between rounded-[var(--radius-sm)] border border-border bg-surface-glass px-4 py-2.5 text-sm transition-colors duration-200 focus:border-accent-line focus:outline-none"
+        role="combobox"
+        aria-expanded={open}
+        aria-haspopup="listbox"
+        aria-controls={`${id}-listbox`}
+        onClick={() => {
+          setOpen((o) => {
+            if (!o) {
+              const currIdx = allOptions.indexOf(value)
+              setHighlightedIndex(currIdx >= 0 ? currIdx : 0)
+            }
+            return !o
+          })
+        }}
+        className="flex w-full items-center justify-between rounded-[var(--radius-sm)] border border-border bg-surface-glass px-4 py-2.5 text-sm transition-colors duration-200 focus:border-accent-line focus:outline-none focus:ring-1 focus:ring-accent-line"
       >
         <span className={value ? 'text-text-primary' : 'text-text-muted'}>
           {value || placeholder}
         </span>
-        <ChevronDown className={cn('h-4 w-4 text-text-muted transition-transform duration-200', open && 'rotate-180')} />
+        <ChevronDown
+          className={cn('h-4 w-4 text-text-muted transition-transform duration-200', open && 'rotate-180')}
+          aria-hidden="true"
+        />
       </button>
 
       {open && (
-        <ul className="absolute z-50 mt-1 w-full overflow-hidden rounded-[var(--radius-sm)] border border-border bg-[#0d0d0d] shadow-xl">
-          <li>
-            <button
-              type="button"
-              onClick={() => { onChange(''); setOpen(false) }}
-              className={cn(
-                'w-full px-4 py-2.5 text-left text-sm transition-colors hover:bg-white/10',
-                !value ? 'text-accent' : 'text-text-muted'
-              )}
-            >
-              {placeholder}
-            </button>
-          </li>
-          {options.map((opt) => (
-            <li key={opt}>
-              <button
-                type="button"
-                onClick={() => { onChange(opt); setOpen(false) }}
+        <ul
+          ref={listboxRef}
+          id={`${id}-listbox`}
+          role="listbox"
+          aria-labelledby={id}
+          className="absolute z-50 mt-1.5 max-h-60 w-full overflow-y-auto rounded-[var(--radius-sm)] border border-border-strong bg-bg-elevated p-1 shadow-2xl backdrop-blur-md"
+        >
+          {allOptions.map((opt, index) => {
+            const isSelected = value === opt
+            const isHighlighted = highlightedIndex === index
+            const label = opt || placeholder
+
+            return (
+              <li
+                key={opt || '__placeholder'}
+                role="option"
+                aria-selected={isSelected}
+                onClick={() => {
+                  onChange(opt)
+                  setOpen(false)
+                  setHighlightedIndex(-1)
+                  triggerRef.current?.focus()
+                }}
+                onMouseEnter={() => setHighlightedIndex(index)}
                 className={cn(
-                  'w-full px-4 py-2.5 text-left text-sm transition-colors hover:bg-white/10',
-                  value === opt ? 'text-accent' : 'text-text-primary'
+                  'flex w-full cursor-pointer items-center justify-between rounded-[var(--radius-sm)] px-3.5 py-2 text-sm transition-colors',
+                  isHighlighted ? 'bg-surface-glass text-accent' : 'text-text-secondary',
+                  isSelected && 'font-medium text-accent'
                 )}
               >
-                {opt}
-              </button>
-            </li>
-          ))}
+                <span>{label}</span>
+                {isSelected && <span className="h-1.5 w-1.5 rounded-full bg-accent" />}
+              </li>
+            )
+          })}
         </ul>
       )}
     </div>

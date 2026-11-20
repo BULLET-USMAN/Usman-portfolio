@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, type ReactNode } from 'react'
+import Link from 'next/link'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
@@ -13,6 +14,8 @@ interface MagneticButtonProps {
 
 const MAGNET_STRENGTH = 0.25
 const MAGNET_RADIUS = 60
+
+const MotionLink = motion.create(Link)
 
 /**
  * Anchor-based button that drifts gently toward the cursor within a small
@@ -42,26 +45,42 @@ export function MagneticButton({ href, children, variant = 'primary', className 
   }
 
   const isExternal = href.startsWith('http')
+  const baseClasses = cn(
+    'inline-flex items-center justify-center rounded-[var(--radius-sm)] px-6 py-3',
+    'font-medium text-sm transition-colors duration-300',
+    variant === 'primary'
+      ? 'bg-accent text-bg hover:bg-accent/90'
+      : 'border border-border-strong bg-transparent text-text-primary hover:border-accent-line hover:text-accent',
+    className
+  )
+
+  if (isExternal) {
+    return (
+      <motion.a
+        ref={ref}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={{ x: springX, y: springY }}
+        className={baseClasses}
+      >
+        {children}
+      </motion.a>
+    )
+  }
 
   return (
-    <motion.a
+    <MotionLink
       ref={ref}
       href={href}
-      target={isExternal ? '_blank' : undefined}
-      rel={isExternal ? 'noopener noreferrer' : undefined}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ x: springX, y: springY }}
-      className={cn(
-        'inline-flex items-center justify-center rounded-[var(--radius-sm)] px-6 py-3',
-        'font-medium text-sm transition-colors duration-300',
-        variant === 'primary'
-          ? 'bg-accent text-bg hover:bg-accent/90'
-          : 'border border-border-strong bg-transparent text-text-primary hover:border-accent-line hover:text-accent',
-        className
-      )}
+      className={baseClasses}
     >
       {children}
-    </motion.a>
+    </MotionLink>
   )
 }
