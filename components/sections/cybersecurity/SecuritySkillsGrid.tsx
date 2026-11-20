@@ -32,8 +32,8 @@ export function SecuritySkillsGrid() {
               key={node.id}
               className={
                 node.status === 'skill'
-                  ? 'rounded-full border border-accent-line px-2 py-0.5 font-mono text-[10px] uppercase tracking-wide text-accent'
-                  : 'rounded-full border border-dashed border-border-strong px-2 py-0.5 font-mono text-[10px] uppercase tracking-wide text-text-muted'
+                  ? 'rounded-full border border-accent-line px-2.5 py-0.5 font-mono text-xs uppercase tracking-wide text-accent'
+                  : 'rounded-full border border-dashed border-border-strong px-2.5 py-0.5 font-mono text-xs uppercase tracking-wide text-text-muted'
               }
             >
               {node.status === 'skill' ? 'Skill' : 'Learning'}

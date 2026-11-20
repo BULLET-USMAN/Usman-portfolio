@@ -85,7 +85,7 @@ export function Timeline() {
             />
 
             <span
-              className={`inline-flex items-center rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-wide ${categoryBadgeClass(stage.category)}`}
+              className={`inline-flex items-center rounded-full border px-3 py-1 font-mono text-xs uppercase tracking-wide ${categoryBadgeClass(stage.category)}`}
             >
               {JOURNEY_CATEGORY_LABELS[stage.category]}
             </span>
@@ -103,7 +103,7 @@ export function Timeline() {
                 {stage.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-full border border-border px-2.5 py-1 text-[11px] text-text-secondary"
+                    className="rounded-full border border-border px-2.5 py-1 text-xs text-text-secondary"
                   >
                     {skill}
                   </span>

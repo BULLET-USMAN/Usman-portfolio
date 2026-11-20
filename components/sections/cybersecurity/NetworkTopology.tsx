@@ -231,7 +231,7 @@ export function NetworkTopology() {
             <span className="font-mono text-xs uppercase tracking-wide text-accent">
               {activeNode.label}
             </span>
-            <span className="ml-2 font-mono text-[10px] uppercase tracking-wide text-text-muted">
+            <span className="ml-2 font-mono text-xs uppercase tracking-wide text-text-muted">
               {activeNode.status === 'skill' ? 'Skill' : 'Currently learning'}
             </span>
             <p className="mt-1 text-text-secondary">{activeNode.description}</p>
