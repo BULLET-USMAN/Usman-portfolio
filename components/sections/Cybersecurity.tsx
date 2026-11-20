@@ -14,8 +14,8 @@ export function Cybersecurity() {
       <SectionHeading
         mark
         eyebrow="Cybersecurity"
-        title="Continuously developing practical technical skills"
-        description="Networking fundamentals and security concepts — presented honestly as skills, active learning, and early tool exposure, not certifications, professional experience, or authorized penetration-testing work."
+        title="Developing practical defensive security capabilities"
+        description="Developing practical capabilities across networking fundamentals, Linux systems, and defensive security engineering. I focus on hands-on lab experimentation, protocol analysis, and building real threat detection systems like AegisSIEM and SentinelDLP."
       />
 
       <div className="mt-10">

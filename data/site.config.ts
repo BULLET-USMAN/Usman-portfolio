@@ -68,8 +68,8 @@ export const siteConfig: SiteConfig = {
   contactEmail: 'usmanjunaid809@gmail.com',
 
   heroCtas: {
-    primary: { label: 'Explore My Work', href: '/#projects' },
-    secondary: { label: 'Contact Me', href: '/#contact' },
+    primary: { label: 'Explore My Work', href: '/projects' },
+    secondary: { label: 'Contact Me', href: '/contact' },
   },
 
   finalCta: {

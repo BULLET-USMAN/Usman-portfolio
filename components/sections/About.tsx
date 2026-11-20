@@ -12,7 +12,7 @@ export function About() {
         mark
         eyebrow="About"
         title="Building at the intersection of three worlds"
-        description="Originally from Faisalabad, Muhammad Usman Junaid is a Computer Science student at the University of Faisalabad — pairing that academic foundation with hands-on entrepreneurship: founding and running an esports organization, learning cybersecurity from the ground up, and building modern software solutions. The common thread is community, technology, and a habit of treating every domain as something to keep improving."
+        description="I am a Computer Science student at the University of Faisalabad, pairing an academic foundation with hands-on entrepreneurship: founding and directing Matrix Esports, building defensive security platforms, and engineering modern web applications. The common thread across my work is community, technical discipline, and continuous improvement."
       />
 
       <div className="mt-12">

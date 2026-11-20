@@ -15,7 +15,7 @@ export function Footer() {
                 {siteConfig.name}
               </span>
             </Link>
-            <p className="mt-3 max-w-[16rem] text-sm text-text-secondary">
+            <p className="mt-3 max-w-[16rem] text-sm text-text-secondary text-pretty">
               {siteConfig.footerTagline}
             </p>
           </div>
@@ -48,7 +48,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-border pt-6">
-          <p className="text-sm text-text-muted">
+          <p className="text-sm text-text-muted text-pretty">
             © {new Date().getFullYear()} {siteConfig.legalName}. All rights reserved.
           </p>
         </div>

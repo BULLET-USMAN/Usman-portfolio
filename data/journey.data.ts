@@ -24,9 +24,9 @@ export const journeyStages: JourneyStage[] = [
   {
     id: 'bscs',
     period: '2023 \u2013 2027',
-    title: 'BSCS \u2014 Computer Science',
+    title: 'BSCS in Computer Science',
     description:
-      'Pursuing a BSCS at the University of Faisalabad \u2014 now in the 7th semester, having built multiple projects along the way and currently working on a final year project.',
+      'Pursuing a BSCS at the University of Faisalabad (currently in my 7th semester), developing solid foundations in algorithms, systems, and active final year project engineering.',
     category: 'education',
     skills: ['Programming fundamentals', 'Problem solving', 'Systems thinking'],
     relatedHref: '/about',
@@ -36,7 +36,7 @@ export const journeyStages: JourneyStage[] = [
     period: 'Alongside BSCS',
     title: 'Matrix Esports',
     description:
-      'Founded and built an esports organization from the ground up \u2014 tournaments, community, and sponsorship outreach.',
+      'Founded and scaled an esports organization from the ground up, directing competitive tournaments, community operations, and brand partnerships.',
     category: 'venture',
     skills: ['Leadership', 'Sponsorship outreach', 'Tournament organization'],
     relatedHref: '/matrix',

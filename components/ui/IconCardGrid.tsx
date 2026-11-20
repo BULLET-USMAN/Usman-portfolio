@@ -41,7 +41,7 @@ export function IconCardGrid({ items, columns = 3 }: IconCardGridProps) {
           <h4 className="mt-4 font-display text-base font-medium text-text-primary">
             {item.title}
           </h4>
-          <p className="mt-1.5 text-sm leading-relaxed text-text-secondary">{item.description}</p>
+          <p className="mt-1.5 text-sm leading-relaxed text-text-secondary text-pretty">{item.description}</p>
         </GlassCard>
       ))}
     </div>

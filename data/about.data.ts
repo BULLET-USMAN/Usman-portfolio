@@ -24,7 +24,7 @@ export const focusAreas: FocusArea[] = [
   {
     icon: 'cpu',
     title: 'Technology',
-    description: 'Broad technical curiosity — from web development to systems.',
+    description: 'Technical curiosity spanning modern web engineering and systems design.',
   },
   {
     icon: 'shield',

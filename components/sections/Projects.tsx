@@ -8,8 +8,8 @@ export function Projects() {
       <SectionHeading
         mark
         eyebrow="Projects"
-        title="A showcase across every discipline"
-        description="Matrix Esports, cybersecurity, web development, and AI/university work — each project shown with role, technologies, and outcome, and nothing here that wasn't actually built."
+        title="Engineered projects and platforms"
+        description="A curated selection of software platforms and tools I have engineered across defensive cybersecurity, web applications, and esports operations, complete with architecture details and live code."
       />
 
       <div className="mt-12">

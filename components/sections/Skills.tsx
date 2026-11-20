@@ -9,7 +9,7 @@ export function Skills() {
         mark
         eyebrow="Skills"
         title="Technology, cybersecurity, and esports"
-        description="Grouped by domain rather than ranked by number — there's no meaningful percentage to put on a skill like this, so these are shown as what they are: things worked with, not scored."
+        description="A practical breakdown of technologies, protocols, and toolkits I actively use across software development, network security, and organization management."
       />
 
       <div className="mt-12">

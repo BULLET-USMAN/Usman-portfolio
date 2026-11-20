@@ -10,7 +10,6 @@ import { cn } from '@/lib/utils'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState('home')
   const pathname = usePathname()
   const pillListRef = useRef<HTMLDivElement>(null)
 
@@ -21,28 +20,6 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Track active section on the homepage
-  useEffect(() => {
-    if (pathname !== '/') return
-
-    const sectionIds = ['home', 'about', 'matrix', 'cybersecurity', 'projects', 'skills', 'contact']
-
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sectionIds[i])
-        if (el && el.offsetTop <= scrollPosition) {
-          setActiveSection(sectionIds[i])
-          break
-        }
-      }
-    }
-
-    handleScroll()
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [pathname])
-
   // Auto-scroll the mobile pill bar to keep the active item in view
   useEffect(() => {
     if (!pillListRef.current) return
@@ -50,7 +27,7 @@ export function Navbar() {
     if (activeEl) {
       activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' })
     }
-  }, [pathname, activeSection])
+  }, [pathname])
 
   return (
     <>
@@ -93,17 +70,15 @@ export function Navbar() {
               {/* Desktop links */}
               <div className="hidden items-center gap-1 xl:flex">
                 {siteConfig.nav.map((item) => {
-                  const sectionId = item.href === '/' ? 'home' : item.href.replace(/^\//, '')
-                  const href = pathname === '/' ? `#${sectionId}` : `/#${sectionId}`
                   const isActive =
-                    pathname === '/'
-                      ? activeSection === sectionId
+                    item.href === '/'
+                      ? pathname === '/'
                       : pathname === item.href || pathname.startsWith(item.href + '/')
 
                   return (
                     <Link
                       key={item.href}
-                      href={href}
+                      href={item.href}
                       aria-current={isActive ? 'page' : undefined}
                       className={cn(
                         'relative rounded-[var(--radius-sm)] px-3 py-2 text-sm transition-colors duration-200',
@@ -136,17 +111,15 @@ export function Navbar() {
               className="mt-2.5 flex items-center gap-1.5 overflow-x-auto pb-0.5 xl:hidden [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
             >
               {siteConfig.nav.map((item) => {
-                const sectionId = item.href === '/' ? 'home' : item.href.replace(/^\//, '')
-                const href = pathname === '/' ? `#${sectionId}` : `/#${sectionId}`
                 const isActive =
-                  pathname === '/'
-                    ? activeSection === sectionId
+                  item.href === '/'
+                    ? pathname === '/'
                     : pathname === item.href || pathname.startsWith(item.href + '/')
 
                 return (
                   <Link
                     key={item.href}
-                    href={href}
+                    href={item.href}
                     data-active={isActive ? 'true' : undefined}
                     aria-current={isActive ? 'page' : undefined}
                     className={cn(

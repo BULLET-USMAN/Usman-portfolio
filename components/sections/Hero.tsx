@@ -93,11 +93,11 @@ export function Hero() {
             ))}
           </h1>
 
-          <p className="mt-6 max-w-xl font-mono text-sm text-accent sm:text-base">
+          <p className="mt-6 max-w-xl font-mono text-sm text-accent sm:text-base text-balance">
             {siteConfig.tagline}
           </p>
 
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-text-secondary sm:text-lg">
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-text-secondary sm:text-lg text-pretty">
             {siteConfig.description}
           </p>
 

@@ -9,7 +9,7 @@ export function Journey() {
         mark
         eyebrow="Journey"
         title="How the path connects"
-        description="Computer science, esports, Matrix Esports, and cybersecurity — each stage labeled honestly as education, personal project, founding, experience, or ongoing learning, not dressed up as something it isn't."
+        description="My trajectory connecting computer science academics, founding and scaling Matrix Esports, and continuous hands-on learning across systems and cybersecurity."
       />
 
       <div className="mt-14">
